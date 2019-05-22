@@ -28,20 +28,29 @@ public class Armadillidiidae : MonoBehaviour
     {
         if (this.distance <= 0.0f)
         {
-            switch ((int)Random.Range(0, 4))
+            if (this.direction.x == 0)
             {
-                case 0:
-                    this.direction = new Vector3(1, 0, 0);
-                    break;
-                case 1:
-                    this.direction = new Vector3(-1, 0, 0);
-                    break;
-                case 2:
-                    this.direction = new Vector3(0, 0, 1);
-                    break;
-                default:
-                    this.direction = new Vector3(0, 0, -1);
-                    break;
+                switch ((int)Random.Range(0, 2))
+                {
+                    case 0:
+                        this.direction = new Vector3(1, 0, 0);
+                        break;
+                    default:
+                        this.direction = new Vector3(-1, 0, 0);
+                        break;
+                }
+            }
+            else
+            {
+                switch ((int)Random.Range(0, 2))
+                {
+                    case 0:
+                        this.direction = new Vector3(0, 0, 1);
+                        break;
+                    default:
+                        this.direction = new Vector3(0, 0, -1);
+                        break;
+                }
             }
 
             this.distance = Random.Range(1, 5) + Random.Range(1, 5);

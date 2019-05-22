@@ -215,6 +215,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.03
+  distance: 0
+  direction: {x: -1, y: 0, z: 0}
 --- !u!114 &246476012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,7 +409,6 @@ GameObject:
   - component: {fileID: 1754051450}
   - component: {fileID: 1754051449}
   - component: {fileID: 1754051448}
-  - component: {fileID: 1754051451}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -476,15 +477,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1754051451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754051447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d45f29238bc9a47aeab06314cefe246c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

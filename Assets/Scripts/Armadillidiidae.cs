@@ -9,6 +9,8 @@ using UnityEngine;
 public class Armadillidiidae : MonoBehaviour
 {
     public float speed = 0.03f;
+    public float distance = 0.0f;
+    public Vector3 direction = new Vector3();
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,30 @@ public class Armadillidiidae : MonoBehaviour
 
     void Move()
     {
-        this.transform.position += new Vector3(-speed, 0, 0);
+        if (this.distance <= 0.0f)
+        {
+            switch ((int)Random.Range(0, 4))
+            {
+                case 0:
+                    this.direction = new Vector3(1, 0, 0);
+                    break;
+                case 1:
+                    this.direction = new Vector3(-1, 0, 0);
+                    break;
+                case 2:
+                    this.direction = new Vector3(0, 0, 1);
+                    break;
+                default:
+                    this.direction = new Vector3(0, 0, -1);
+                    break;
+            }
+
+            this.distance = Random.Range(1, 5) + Random.Range(1, 5);
+        }
+
+
+        this.transform.position += speed * direction;
+        this.distance -= speed;
     }
 
     void Animate()

@@ -15,10 +15,6 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Update()
     {
-        Vector2 start = transform.position;
-
-        Vector2 end = start + new Vector2(1, 0);
-
-        transform.position = end;
+        transform.position += new Vector3(1, 0, 0);
     }
 }

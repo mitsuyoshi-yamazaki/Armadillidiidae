@@ -14,7 +14,7 @@ public class Armadillidiidae : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("I am alive and my name is ");
+        // Debug.Log("I am alive and my name is ");
 
     }
 }

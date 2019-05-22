@@ -262,8 +262,8 @@ GameObject:
   - component: {fileID: 246476015}
   - component: {fileID: 246476014}
   - component: {fileID: 246476013}
-  - component: {fileID: 246476011}
   - component: {fileID: 246476012}
+  - component: {fileID: 246476011}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -283,9 +283,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c7b44a06391142aaa582dfa19cec399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.03
-  distance: 0
-  direction: {x: -1, y: 0, z: 0}
+  speed: 0.01
+  direction: {x: 0, y: 0, z: 0}
+  fatigure: 0
+  fatigureDecreasement: 0.0008
 --- !u!114 &246476012
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class Armadillidiidae : MonoBehaviour
     public float fatigureDecreasement = 0.0008f;
     // public float drowsiness = 0.0f;
 
+    private bool isResting = false;
     private RandomWalk randomWalk = new RandomWalk();
 
     // Start is called before the first frame update
@@ -25,22 +26,41 @@ public class Armadillidiidae : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RandomWalk.Output output = this.randomWalk.Run();
-        this.Move(output.direction, output.speed);
+        if ((this.fatigure >= 0.65f) || this.isResting)
+        {
+            this.isResting = true;
+            this.Rest();
 
-        this.fatigure -= this.fatigureDecreasement;
+            if (this.fatigure <= 0f)
+            {
+                this.fatigure = 0f;
+                this.isResting = false;
+            }
+        }
+        else
+        {
+            RandomWalk.Output output = this.randomWalk.Run();
+            this.Move(output.direction, output.speed);
+        }
+
+        // this.fatigure -= this.fatigureDecreasement;
         this.fatigure = Mathf.Max(this.fatigure, 0f);
-
-        this.Animate();
     }
 
     private void Move(Vector3 direction, float speed)
     {
-        float actualSpeed = speed;  // FixMe:
+        float actualSpeed = Mathf.Max(speed, 0.05f) * (1f - this.fatigure);  // FixMe:
 
         this.transform.position += actualSpeed * direction;
 
         this.fatigure += Mathf.Pow(actualSpeed, 2f);
+
+        this.Animate();
+    }
+
+    private void Rest()
+    {
+        this.fatigure -= this.fatigureDecreasement * 2f;
     }
 
     private void Animate()

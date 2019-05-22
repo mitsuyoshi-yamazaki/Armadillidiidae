@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class Armadillidiidae : MonoBehaviour
 {
-    public double direction = 0.0;
+    public float speed = 0.03f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,20 @@ public class Armadillidiidae : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(1, 0, 0);
+        this.Move();
+        this.Animate();
+    }
+
+    void Move()
+    {
+        this.transform.position += new Vector3(-speed, 0, 0);
+    }
+
+    void Animate()
+    {
+        float angle = 120.0f;
+        Vector3 axis = new Vector3(0, 0, 1);
+
+        this.transform.RotateAround(this.transform.position, axis, angle * Time.deltaTime);
     }
 }

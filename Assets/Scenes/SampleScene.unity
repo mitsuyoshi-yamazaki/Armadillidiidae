@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -287,6 +287,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   fatigure: 0
   fatigureDecreasement: 0.0008
+  light: {fileID: 1577450607}
 --- !u!114 &246476012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,7 +631,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 12.3
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:

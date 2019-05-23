@@ -15,6 +15,8 @@ public class Armadillidiidae : MonoBehaviour
     public float fatigureDecreasement = 0.0008f;
     // public float drowsiness = 0.0f;
 
+    public GameObject light;
+
     private bool isResting = false;
     private RandomWalk randomWalk = new RandomWalk();
 

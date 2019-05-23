@@ -17,6 +17,8 @@ public class Armadillidiidae : MonoBehaviour
 
     public GameObject light;
 
+    public bool animate = false;
+
     private bool isResting = false;
     private RandomWalk randomWalk = new RandomWalk();
 
@@ -67,6 +69,10 @@ public class Armadillidiidae : MonoBehaviour
 
     private void Animate()
     {
+        if (!this.animate)
+        {
+            return;
+        }
         float angle = 120.0f;
         Vector3 axis = new Vector3(0, 0, 1);
 
